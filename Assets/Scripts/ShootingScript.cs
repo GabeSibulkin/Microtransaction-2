@@ -16,7 +16,6 @@ public class ShootingScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
         if(timer>2)
         {
             timer = 0;
@@ -27,7 +26,13 @@ public class ShootingScript : MonoBehaviour
 
     void shoot()
     {
-        var bulletmade = Instantiate(bullet, bulletPos.position, Quaternion.identity);
-       // bullet.GetComponent<Rigidbody2D>().velocity = (-(bulletPos.right)) * bulletspeed;
+        if (transform.localScale.x > 0)
+        {
+            Instantiate(bullet, bulletPos.position, Quaternion.Euler(0, 180, 0));
+        }
+        else
+        {
+            Instantiate(bullet, bulletPos.position, Quaternion.identity);
+        }// bullet.GetComponent<Rigidbody2D>().velocity = (-(bulletPos.right)) * bulletspeed;
     }
 }

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5519079224819809852}
   - component: {fileID: 8410101040354894976}
-  - component: {fileID: 1887889548271997550}
   - component: {fileID: 7667692119277993906}
-  m_Layer: 0
-  m_Name: 100 Points
+  - component: {fileID: -7446055273250402542}
+  m_Layer: 12
+  m_Name: 50 Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1887889548271997550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811843943382569602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c6799fdd638b24189ee9bd2cd2e54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreCount: {fileID: 0}
 --- !u!61 &7667692119277993906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40.96, y: 40.96}
   m_EdgeRadius: 0
+--- !u!114 &-7446055273250402542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811843943382569602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bfca4dfea75084cacc3008b4ea008a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 50

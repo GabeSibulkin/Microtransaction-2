@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     public bool isCrouching;
     public float crouchDuration = 2.0f; // Adjust this value to control how long sliding lasts
+    public Transform firingPosition;
+    public GameObject bulletType;
+    public float RateOfFire = 0.3f;
+    float currentCooldown;
+    bool fireCooldown = false;
 
     private Rigidbody2D rb;
     public Animator animator;
@@ -51,10 +56,20 @@ public class PlayerMovement : MonoBehaviour
         originalScale = transform.localScale; // Store the original scale at the start
         isCrouching = false; // Initialize isCrouching to false
         crouchTimer = 0f;
+        currentCooldown = RateOfFire;
     }
 
     void Update()
     {
+        if (fireCooldown == true)
+        {
+            currentCooldown -= Time.deltaTime;
+            if (currentCooldown <= 0)
+            {
+                fireCooldown = false;
+                currentCooldown = RateOfFire;
+            }
+        }
         Move = Input.GetAxis("Horizontal");
 
         // Check if crouching and adjust movement
@@ -82,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             if (Move > 0)
             {
                 transform.localScale = originalScale; // Use the original scale for right movement
+                
             }
             else if (Move < 0)
             {
@@ -98,15 +114,41 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             isCrouching = true;
             animator.SetBool("isCrouching", true);
         }
-        else if (Input.GetButtonUp("Fire1"))
+        else if (Input.GetButtonUp("Fire2"))
         {
             isCrouching = false;
             animator.SetBool("isCrouching", false);
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log(fireCooldown);
+            animator.SetBool("Firing", true);
+            if (fireCooldown == false)
+            {
+                if (transform.localScale.x < 0)
+                {
+                    Instantiate(bulletType, firingPosition.position, Quaternion.Euler(0, 180, 0));
+                }
+                else
+                {
+                    Instantiate(bulletType, firingPosition.position, Quaternion.identity);
+                }
+                fireCooldown = true;
+            }
+            else
+            {
+                Debug.Log("On cooldown");
+            }
+            
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("Firing", false);
         }
     }
 

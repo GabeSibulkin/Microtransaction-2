@@ -6,7 +6,8 @@ using TMPro;
 
 public class ScorePieceTwo : MonoBehaviour
 {
-   
+    MoneyTracker tracker;
+    public int value;
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
