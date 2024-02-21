@@ -16,6 +16,7 @@ public class MoneyPickUp : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Player"))
         {
+            
             tracker.AddMoney(value);
             Destroy(gameObject);
         }

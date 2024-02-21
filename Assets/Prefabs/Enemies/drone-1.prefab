@@ -180,6 +180,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  minMoneySpawned: 50
+  maxMoneySpawned: 75
+  cashOnDeath:
+  - {fileID: 8716895317762280572, guid: d12a8b2cd845fac41949811976bc4939, type: 3}
+  - {fileID: 3060318115678174624, guid: 6af17d30071d6ad419b5211bf51de281, type: 3}
 --- !u!114 &4377765736084948020
 MonoBehaviour:
   m_ObjectHideFlags: 0

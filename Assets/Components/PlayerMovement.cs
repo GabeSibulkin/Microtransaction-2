@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     float currentCooldown;
     bool fireCooldown = false;
 
+    bool isRolling;
+    bool rollOnCooldown;
+    public float rollSpeed;
+    public float rollCooldown;
+    public float rollDuration;
+
     private Rigidbody2D rb;
     public Animator animator;
 
@@ -70,85 +76,111 @@ public class PlayerMovement : MonoBehaviour
                 currentCooldown = RateOfFire;
             }
         }
-        Move = Input.GetAxis("Horizontal");
-
-        // Check if crouching and adjust movement
-        if (isCrouching)
+        if (isRolling == false)
         {
-            // Update crouch timer
-            crouchTimer += Time.deltaTime;
+            Move = Input.GetAxis("Horizontal");
 
-            // Check if sliding duration is over
-            if (crouchTimer >= crouchDuration)
+            // Check if crouching and adjust movement
+            if (isCrouching)
             {
-                // Stop updating velocity but continue crouching animation
-                rb.velocity = new Vector2(0f, rb.velocity.y);
-            }
-        }
-        else
-        {
-            // Reset crouch timer when not crouching
-            crouchTimer = 0f;
+                // Update crouch timer
+                crouchTimer += Time.deltaTime;
 
-            // Update velocity based on the direction
-            rb.velocity = new Vector2(speed * Move, rb.velocity.y);
-
-            // Flip the player sprite if moving in the opposite direction
-            if (Move > 0)
-            {
-                transform.localScale = originalScale; // Use the original scale for right movement
-                
-            }
-            else if (Move < 0)
-            {
-                transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // Flip for left movement
-            }
-        }
-
-        // Update animation speed based on the absolute value of Move
-        animator.SetFloat("Speed", Mathf.Abs(speed * Move));
-
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-            animator.SetBool("IsJumping", true);
-        }
-
-        if (Input.GetButtonDown("Fire2"))
-        {
-            isCrouching = true;
-            animator.SetBool("isCrouching", true);
-        }
-        else if (Input.GetButtonUp("Fire2"))
-        {
-            isCrouching = false;
-            animator.SetBool("isCrouching", false);
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Debug.Log(fireCooldown);
-            animator.SetBool("Firing", true);
-            if (fireCooldown == false)
-            {
-                if (transform.localScale.x < 0)
+                // Check if sliding duration is over
+                if (crouchTimer >= crouchDuration)
                 {
-                    Instantiate(bulletType, firingPosition.position, Quaternion.Euler(0, 180, 0));
+                    // Stop updating velocity but continue crouching animation
+                    rb.velocity = new Vector2(0f, rb.velocity.y);
                 }
-                else
-                {
-                    Instantiate(bulletType, firingPosition.position, Quaternion.identity);
-                }
-                fireCooldown = true;
             }
             else
             {
-                Debug.Log("On cooldown");
+                // Reset crouch timer when not crouching
+                crouchTimer = 0f;
+
+                // Update velocity based on the direction
+                rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+
+                // Flip the player sprite if moving in the opposite direction
+                if (Move > 0)
+                {
+                    transform.localScale = originalScale; // Use the original scale for right movement
+
+                }
+                else if (Move < 0)
+                {
+                    transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // Flip for left movement
+                }
             }
-            
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            animator.SetBool("Firing", false);
+
+            // Update animation speed based on the absolute value of Move
+            animator.SetFloat("Speed", Mathf.Abs(speed * Move));
+
+            if (Input.GetButtonDown("Jump") && !isJumping)
+            {
+                rb.AddForce(new Vector2(rb.velocity.x, jump));
+                animator.SetBool("IsJumping", true);
+            }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                isCrouching = true;
+                animator.SetBool("isCrouching", true);
+            }
+            else if (Input.GetButtonUp("Fire2"))
+            {
+                isCrouching = false;
+                animator.SetBool("isCrouching", false);
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Debug.Log(fireCooldown);
+                if (Move != 0)
+                {
+                    animator.SetLayerWeight(1, 1);
+                }
+                else
+                {
+                    animator.SetLayerWeight(1, 0);
+                    animator.SetBool("Firing", true);
+                }
+                if (fireCooldown == false)
+                {
+                    if (transform.localScale.x < 0)
+                    {
+                        Instantiate(bulletType, firingPosition.position, Quaternion.Euler(0, 180, 0));
+                    }
+                    else
+                    {
+                        Instantiate(bulletType, firingPosition.position, Quaternion.identity);
+                    }
+                    fireCooldown = true;
+                }
+                else
+                {
+                    Debug.Log("On cooldown");
+                }
+
+            }
+            if (Input.GetButton("Fire1"))
+            {
+                if (Move != 0)
+                {
+                    animator.SetBool("Firing", false);
+                }
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                animator.SetLayerWeight(1, 0);
+                animator.SetBool("Firing", false);
+            }
+            if (Input.GetButtonDown("Fire3"))
+            {
+                if (!rollOnCooldown && !isJumping)
+                {
+                    StartCoroutine(DodgeRoll());
+                }
+            }
         }
     }
 
@@ -170,5 +202,21 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("IsJumping", true);
         }
+    }
+
+    private IEnumerator DodgeRoll()
+    {
+        isRolling = true;
+        rollOnCooldown = true;
+        animator.SetBool("IsRolling", true);
+        rb.velocity = new Vector2(transform.localScale.x * rollSpeed, 0f);
+        gameObject.layer = LayerMask.NameToLayer("DodgingPlayer");
+        yield return new WaitForSeconds(rollDuration);
+        gameObject.layer = LayerMask.NameToLayer("Player");
+        isRolling = false;
+        animator.SetBool("IsRolling", false);
+        yield return new WaitForSeconds(rollCooldown);
+        rollOnCooldown = false;
+
     }
 }
