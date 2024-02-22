@@ -7392,6 +7392,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6688122580340105551, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8667676498812781469, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_Name
       value: turret-2 (2)
@@ -7403,6 +7407,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1108157200002603483, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
     - {fileID: 3610267996378183719, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+    - {fileID: 6688122580340105551, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
@@ -8922,6 +8927,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6688122580340105551, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8667676498812781469, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_Name
       value: turret-2
@@ -8933,6 +8942,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1108157200002603483, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
     - {fileID: 3610267996378183719, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+    - {fileID: 6688122580340105551, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
@@ -17241,6 +17251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6688122580340105551, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8667676498812781469, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_Name
       value: turret-2 (1)
@@ -17252,6 +17266,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1108157200002603483, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
     - {fileID: 3610267996378183719, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+    - {fileID: 6688122580340105551, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
