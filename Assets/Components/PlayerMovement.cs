@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 Debug.Log(fireCooldown);
-                if (Move != 0)
+                if (Move != 0 || !isJumping)
                 {
                     animator.SetLayerWeight(1, 1);
                 }
@@ -181,6 +181,13 @@ public class PlayerMovement : MonoBehaviour
                     StartCoroutine(DodgeRoll());
                 }
             }
+            if (Input.GetButtonDown("Melee"))
+            {
+                if (!isJumping)
+                {
+                    StartCoroutine(MeleeCoroutine());
+                }
+            }
         }
     }
 
@@ -218,5 +225,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(rollCooldown);
         rollOnCooldown = false;
 
+    }
+
+    private IEnumerator MeleeCoroutine()
+    {
+        isRolling = true;
+        animator.SetBool("IsMelee", true);
+        yield return new WaitForSeconds(0.7f);
+        animator.SetBool("IsMelee", false);
+        isRolling = false;
     }
 }

@@ -27,7 +27,7 @@ public class BulletScript : MonoBehaviour
         if (collision.collider.gameObject.GetComponent<EnemyScript>())
         {
             
-            collision.collider.gameObject.GetComponent<EnemyScript>().Damage(damageValue);
+            collision.collider.gameObject.GetComponent<EnemyScript>().Damage(damageValue, "Projectile");
         }
         Destroy(gameObject);
 

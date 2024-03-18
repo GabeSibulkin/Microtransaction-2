@@ -36,7 +36,8 @@ public class MoneyTracker : MonoBehaviour
             
         }
         else 
-        { 
+        {
+            Debug.Log("Leaving...");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
         }
     }
