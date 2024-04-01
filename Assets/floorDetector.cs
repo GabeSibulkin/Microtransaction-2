@@ -8,7 +8,14 @@ public class floorDetector : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
-            GetComponentInParent<SoldierEnemyScript>().flipMe();
+            if (GetComponentInParent<SoldierEnemyScript>())
+            {
+                GetComponentInParent<SoldierEnemyScript>().flipMe();
+            }
+            else if (GetComponentInParent<MechEnemyScript>())
+            {
+                GetComponentInParent<MechEnemyScript>().flipMe();
+            }    
         }
     }
 }
