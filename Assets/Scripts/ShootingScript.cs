@@ -33,6 +33,7 @@ public class ShootingScript : MonoBehaviour
         else
         {
             Instantiate(bullet, bulletPos.position, Quaternion.identity);
-        }// bullet.GetComponent<Rigidbody2D>().velocity = (-(bulletPos.right)) * bulletspeed;
+            bullet.GetComponent<Rigidbody2D>().velocity = (-(bulletPos.right)) * bulletspeed;
+        }
     }
 }

@@ -9,7 +9,7 @@ public class MoneyPickUp : MonoBehaviour
 
     public void Start()
     {
-        tracker = GameObject.Find("GameManager").GetComponent<MoneyTracker>();
+        //tracker = GameObject.Find("GameManager").GetComponent<MoneyTracker>();
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
