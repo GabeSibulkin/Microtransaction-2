@@ -2126,6 +2126,12 @@ MonoBehaviour:
   isJumping: 0
   isCrouching: 1
   crouchDuration: 2
+  firingPosition: {fileID: 0}
+  bulletType: {fileID: 0}
+  RateOfFire: 0.3
+  rollSpeed: 0
+  rollCooldown: 0
+  rollDuration: 0
   animator: {fileID: 647923900}
 --- !u!114 &647923905
 MonoBehaviour:
@@ -5133,7 +5139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807805200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1be3bc30919f5e4448870e36a48e2440, type: 3}
   m_Name: 
