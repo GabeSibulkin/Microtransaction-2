@@ -28,6 +28,11 @@ public class BulletScript : MonoBehaviour
             
             collision.collider.gameObject.GetComponent<EnemyScript>().Damage(damageValue, "Projectile");
         }
+        else if (collision.collider.gameObject.GetComponent<BossHurtBox>())
+        {
+
+            collision.collider.gameObject.GetComponent<BossHurtBox>().DealDamage(damageValue, "Projectile");
+        }
         Destroy(gameObject);
 
     }
