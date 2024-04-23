@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 431481569}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0579033, y: 2.2423036, z: 16}
+  m_LocalPosition: {x: 4.0579033, y: 2.2423036, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1434,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6270813905532506192, guid: d4904c9d30598134db9fea254a22636c, type: 3}
       propertyPath: multiplier
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6270813905532506192, guid: d4904c9d30598134db9fea254a22636c, type: 3}
       propertyPath: maxMoneySpawned
@@ -1459,6 +1459,14 @@ PrefabInstance:
     - target: {fileID: 7790439283080242312, guid: d4904c9d30598134db9fea254a22636c, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973926886545866249, guid: d4904c9d30598134db9fea254a22636c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973926886545866249, guid: d4904c9d30598134db9fea254a22636c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

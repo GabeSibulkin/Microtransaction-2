@@ -17,7 +17,7 @@ public class BossEnemyScript : EnemyScript
     public SpriteRenderer head;
     int MaxHealth;
     int chosenAttack, previousAttack;
-    bool isDead;
+    public bool isDead;
     public GameObject spawnLocation;
     int timeInIdle;
 
@@ -99,11 +99,13 @@ public class BossEnemyScript : EnemyScript
         animator.SetBool("LowPunch", false);
         animator.SetBool("Summon", false);
         animator.SetBool("Dead", true);
+        BossState = BossStates.Dead;
         if (damageType == "Melee")
         {
             multiplier = 2;
         }
-        yield return 0;
+        yield return new WaitForSeconds(3f);
+        Die();
     }
 
     public void SummonEnemy()
