@@ -577,6 +577,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461738442}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &469744781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3533499963827456260, guid: d4904c9d30598134db9fea254a22636c, type: 3}
+  m_PrefabInstance: {fileID: 1878874006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &857790947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,12 +1435,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6270813905532506192, guid: d4904c9d30598134db9fea254a22636c, type: 3}
       propertyPath: health
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6270813905532506192, guid: d4904c9d30598134db9fea254a22636c, type: 3}
       propertyPath: multiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6270813905532506192, guid: d4904c9d30598134db9fea254a22636c, type: 3}
+      propertyPath: spawnLocation
+      value: 
+      objectReference: {fileID: 469744781}
     - target: {fileID: 6270813905532506192, guid: d4904c9d30598134db9fea254a22636c, type: 3}
       propertyPath: maxMoneySpawned
       value: 40

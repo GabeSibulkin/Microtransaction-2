@@ -55,6 +55,10 @@ public class BossEnemyScript : EnemyScript
                     break;
             }
         }
+        else if (isDead)
+        {
+            BossState = BossStates.Dead;
+        }
         
     }
 
@@ -81,6 +85,7 @@ public class BossEnemyScript : EnemyScript
 
     public IEnumerator laserCoroutine()
     {
+
         animator.SetBool("Laser", true) ;
         yield return 0;
     }
@@ -117,7 +122,7 @@ public class BossEnemyScript : EnemyScript
     public override void Damage(int damage, string damageType)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && BossState != BossStates.Dead)
         {
             StartCoroutine(deathCoroutine(damageType));
         }
@@ -182,7 +187,7 @@ public class BossEnemyScript : EnemyScript
 
         for (int i = 0; i < Random.Range(minMoneySpawned * multiplier, maxMoneySpawned * multiplier); i++)
         {
-            GameObject spawnedMoney = Instantiate(cashOnDeath[Random.Range(0, cashOnDeath.Count)], transform.position, Quaternion.identity);
+            GameObject spawnedMoney = Instantiate(cashOnDeath[Random.Range(0, cashOnDeath.Count)], spawnLocation.transform.position, Quaternion.identity);
             spawnedMoney.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-200, 200), Random.Range(200, 400)));
         }
     }
