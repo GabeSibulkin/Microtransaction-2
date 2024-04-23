@@ -576,27 +576,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8681654727888262662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eda6d3f3fa9a5e49b467e3e338b231d, type: 3}
+  m_Script: {fileID: 11500000, guid: 73345aef11dba104c86f3e9a3940c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  minMoneySpawned: 10
-  maxMoneySpawned: 15
+  health: 6
+  minMoneySpawned: 8
+  maxMoneySpawned: 10
   cashOnDeath:
+  - {fileID: 8716895317762280572, guid: d12a8b2cd845fac41949811976bc4939, type: 3}
   - {fileID: 2776471812111201879, guid: 4dc1c26bf8a2d204fa7e5315864feddc, type: 3}
-  - {fileID: 7544436827200692820, guid: 96b8b8bc6f24b184098c22587638753a, type: 3}
-  multiplier: 1
-  states: 2
+  multiplier: 2
+  states: 0
   projectile: {fileID: 6118534740342845233, guid: 0aa2bc1cb396b324aa2bf5008aeee64f, type: 3}
   player: {fileID: 0}
   projectileFirePoint: {fileID: 6841238915994190706}
-  MinStateTime: 2
-  MaxStateTime: 10
+  MinStateTime: 0
+  MaxStateTime: 0
   shotsFiredMax: 6
   FireCooldown: 3
   standingStill: 0
   rb: {fileID: 1813656408262487684}
   distanceToPlayer: 0
-  maxDistanceToPlayer: 4
-  TimeBetweenShots: 0.2
+  maxDistanceToPlayer: 2
+  TimeBetweenShots: 0.15
   startsActive: 1

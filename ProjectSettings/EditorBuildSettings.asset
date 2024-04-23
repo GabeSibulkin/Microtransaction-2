@@ -18,11 +18,26 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstScene.unity
     guid: a6ac2da76623d784dbeb2af9c64dd514
   - enabled: 1
+    path: Assets/Scenes/Scene_1.2.unity
+    guid: 75c6b53e8d5ecd8449947607415d087d
+  - enabled: 1
+    path: Assets/Scenes/Scene_1.3.unity
+    guid: eac7026b1b1b5d844becc1e9ae3f3fa3
+  - enabled: 1
     path: Assets/Scenes/SecondScene.unity
     guid: 5598aaadbb49157478329ecd8b4c3148
   - enabled: 1
+    path: Assets/Scenes/Scene_2.2.unity
+    guid: 091cbe45faac6ad40b06158edde83e6e
+  - enabled: 1
+    path: Assets/Scenes/Scene_2.3.unity
+    guid: bc146ec22c61ae2459e7c2422fe5794b
+  - enabled: 1
     path: Assets/Scenes/ThirdScene.unity
     guid: 0e56b3ca04569c74ea9dd72d88095861
+  - enabled: 1
+    path: Assets/Scenes/Scene_3.2.unity
+    guid: 14f9e6bec06f8d948831f17b5e1ea714
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 5d169575de031f74daee4bd6ce6b6752

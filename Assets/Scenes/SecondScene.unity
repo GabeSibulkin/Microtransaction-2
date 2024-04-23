@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdd24881fbc53044a3f27319b2a2eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToEarn: 1000
+  valueToEarn: 1500
   currentValue: 0
   scoreTracker: {fileID: 2052242319}
 --- !u!4 &329953550
@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.33
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1245,6 +1245,10 @@ PrefabInstance:
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914812756529887241, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8667676498812781469, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_Name
@@ -2022,6 +2026,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 850864830245615933, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2828971890298984286, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_Name
       value: drone-5
@@ -2040,11 +2048,11 @@ PrefabInstance:
       objectReference: {fileID: 1999038087}
     - target: {fileID: 8438697597494958570, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 8438697597494958570, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8438697597494958570, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3499,7 +3507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.28
+      value: -0.9599999
       objectReference: {fileID: 0}
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4097,7 +4105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.38
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 2385138177196509114, guid: 30f70c81e277f004d99b0da24b6a86a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4360,6 +4368,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 850864830245615933, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.63
+      objectReference: {fileID: 0}
     - target: {fileID: 2828971890298984286, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_Name
       value: drone-5 (1)
@@ -4378,11 +4390,11 @@ PrefabInstance:
       objectReference: {fileID: 1296893461}
     - target: {fileID: 8438697597494958570, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21
+      value: 34.1
       objectReference: {fileID: 0}
     - target: {fileID: 8438697597494958570, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0000001
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8438697597494958570, guid: d4ff13df402608b4f91e636e55529b2e, type: 3}
       propertyPath: m_LocalPosition.z

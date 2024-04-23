@@ -202,6 +202,10 @@ MonoBehaviour:
   crouchDuration: 2
   firingPosition: {fileID: 1863499780314818542}
   bulletType: {fileID: 1502689154623471586, guid: 0849efedc688882479689f5918757789, type: 3}
+  RateOfFire: 0.3
+  rollSpeed: 5
+  rollCooldown: 2
+  rollDuration: 0.2
   animator: {fileID: 5229142663558763930}
 --- !u!114 &2986929340285036752
 MonoBehaviour:
