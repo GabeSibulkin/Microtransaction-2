@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 753154351}
   - component: {fileID: 753154350}
   - component: {fileID: 753154349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Screenshot 2023-12-11 212543 (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2343,7 +2343,7 @@ GameObject:
   - component: {fileID: 1557713886}
   - component: {fileID: 1557713885}
   - component: {fileID: 1557713884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Screenshot 2023-12-11 212543
   m_TagString: Ground
   m_Icon: {fileID: 0}

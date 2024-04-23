@@ -94,19 +94,16 @@ public class BossEnemyScript : EnemyScript
     {
         inCoroutine = true;
         isDead = true;
+        animator.SetBool("Laser", false);
+        animator.SetBool("HighPunch", false);
+        animator.SetBool("LowPunch", false);
+        animator.SetBool("Summon", false);
         animator.SetBool("Dead", true);
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
         if (damageType == "Melee")
         {
             multiplier = 2;
         }
-        for (int i = 0; i < Random.Range(minMoneySpawned * multiplier, maxMoneySpawned * multiplier); i++)
-        {
-            GameObject spawnedMoney = Instantiate(cashOnDeath[Random.Range(0, cashOnDeath.Count)], transform.position, Quaternion.identity);
-            spawnedMoney.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-200, 200), Random.Range(200, 400)));
-        }
-        Destroy(gameObject);
-
+        yield return 0;
     }
 
     public void SummonEnemy()
@@ -149,7 +146,7 @@ public class BossEnemyScript : EnemyScript
         if (timeInIdle <= 0)
         {
             inCoroutine = false;
-            chosenAttack = Random.Range(1, 5);
+            chosenAttack = Random.Range(1, 4);
             Debug.Log(chosenAttack);
             switch (chosenAttack)
             {
@@ -164,10 +161,7 @@ public class BossEnemyScript : EnemyScript
                 case 3:
                     BossState
                         = BossStates.Laser;
-                    break;
-                case 4:
-                    BossState
-                        = BossStates.Summon;
+                    
                     break;
                 default:
                     break;
@@ -179,4 +173,15 @@ public class BossEnemyScript : EnemyScript
         }
     }
 
+    public void Die()
+    {
+
+        Destroy(gameObject);
+
+        for (int i = 0; i < Random.Range(minMoneySpawned * multiplier, maxMoneySpawned * multiplier); i++)
+        {
+            GameObject spawnedMoney = Instantiate(cashOnDeath[Random.Range(0, cashOnDeath.Count)], transform.position, Quaternion.identity);
+            spawnedMoney.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-200, 200), Random.Range(200, 400)));
+        }
+    }
 }
